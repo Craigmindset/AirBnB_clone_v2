@@ -1,17 +1,15 @@
 #!/usr/bin/python3
-""" Function that deploys """
-from fabric.api import *
-
-
-env.hosts = ['35.231.33.237', '34.74.155.163']
-env.user = "ubuntu"
+"""Clean all archives based on the number of
+arguements passed"""
+from operator import length_hint
+from fabric.api import run, local, cd, env
+import os
 
 
 def do_clean(number=0):
-    """ CLEANS """
+    """Cleans all .tgz files"""
 
     number = int(number)
-
     if number == 0:
         number = 2
     else:

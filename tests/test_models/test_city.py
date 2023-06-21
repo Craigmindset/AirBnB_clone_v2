@@ -2,10 +2,10 @@
 """test for city"""
 import unittest
 import os
-from os import getenv
 from models.city import City
 from models.base_model import BaseModel
 import pep8
+from os import getenv
 
 
 class TestCity(unittest.TestCase):
@@ -57,7 +57,8 @@ class TestCity(unittest.TestCase):
         self.assertEqual(type(self.city.name), str)
         self.assertEqual(type(self.city.state_id), str)
 
-    @unittest.skipIf(getenv("HBNB_TYPE_STORAGE") == 'db', 'DB')
+    @unittest.skipIf(getenv("HBNB_TYPE_STORAGE") == 'db',
+                     "can't")
     def test_save_City(self):
         """test if the save works"""
         self.city.save()
